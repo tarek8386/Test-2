@@ -75,9 +75,21 @@ header {
 
 .logo img,
 .mobile-logo img {
-  width: 50px;
+  width: 41.943px;
   height: 100%;
   object-fit: cover;
+}
+.logo,
+.mobile-logo  {
+ gap: 8px;
+}
+.logo-name{
+color: var(--white);
+text-align: center;
+font-size: 28px;
+font-style: normal;
+font-weight: 700;
+line-height: 19.941px;
 }
 
 .menu-area {
@@ -134,7 +146,7 @@ header {
   padding: 11px 16px;
   font-size: 17px;
   color: var(--white);
-  border: 1px solid var(--white);
+  border: 1px solid transparent;
   background: none;
   overflow: hidden;
   cursor: pointer;
@@ -165,10 +177,10 @@ header {
 
 .fill-btn {
   position: relative;
-  padding: 11px 16px;
+  padding: 12px 20px;
   font-size: 18px;
   color: var(--white);
-  background: #00b2ff;
+  background: var(--primary);
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -194,12 +206,27 @@ header {
 }
 
 .fill-btn:hover {
-  background: #00b2ff;
+  background: var(--white);
+  color: var(--black);
 }
 
 .fill-btn span {
   position: relative;
   z-index: 1;
+}
+.fill-btn svg path {
+  transition: stroke 0.3s ease;
+}
+
+.fill-btn:hover svg path {
+  stroke: black; 
+}
+.fill-btn svg {
+  transition: transform 0.3s ease;
+  margin-left: 8px;
+}
+.fill-btn:hover svg {
+  transform: rotate(-33deg);
 }
 
 .mobile-menu {
@@ -240,4 +267,146 @@ header {
   width: 100%;
   height: 100vh;
 }
+.hero-content-wrapper{
+  height: 100%;
+}
+.text-content-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.text-content-wrapper h1{
+  color: var(--white);
+text-align: center;
+font-size: 88px;
+font-style: normal;
+font-weight: 700;
+line-height: 100.941px;
+}
+.text-content-wrapper span{
+  color: var(--primary);
+  font-family: "DM Serif Text";
+  font-style: italic;
+  font-weight: 400;
+}
 /* home hero end */
+
+/* partner-section start */
+.partner-section .common-sub-heading{
+  font-style: 24px !important;
+}
+
+.partner-content-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.partner-items {
+  display: flex;
+  gap: 96px;
+  animation: scroll-marquee 20s linear infinite;
+}
+
+.partner-item img {
+  max-height: 50px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* partner-section end */
+
+
+/* why choose section start */
+.why-choose-card-wrapper{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 24px;
+}
+.why-choose-card{
+display: flex;
+flex-direction: column;
+gap: 24px;
+}
+.why-choose-card-2{
+  background-color: #FFF4F0;
+  border-radius: 24px;
+}
+.why-choose-card-img-area{
+  border-radius: 24px;
+  overflow: hidden;
+  width: 100%;
+  height: 321px;
+}
+.why-choose-card-img-area img{
+  border-radius: 24px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+ .why-choose-card-content-area{
+padding: 30px;
+border-radius: 24px;
+border: 1px solid rgba(0, 0, 0, 0.11);
+background: #FFF4F0;
+}
+.why-choose-card-2 .why-choose-card-content-area{
+  border-radius: 24px;
+border: none;
+background: #FFF4F0;
+padding: 30px;
+}
+.why-choose-card-2 .why-choose-card-img-area{
+  padding-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  .why-choose-card-2 .why-choose-card-img-area img{
+  object-fit: contain;
+  }
+.why-choose-common-heading{
+  color: var(--primary);
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 34px; /* 141.667% */
+}
+.why-choose-card-content-area-2 .why-choose-content-top{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+/* why choose section end */
+
+
+/* discover section start */
+.section-heading-wrapper-2{
+  display: flex;
+  justify-content: space-between;
+  gap: 402px;
+}
+.section-heading-wrapper-2-right{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: start;
+}
+.section-heading-wrapper-2 .common-heading{
+  line-height: 60px;
+  max-width: 450px;
+  text-align: left;
+}
+/* discover section end */

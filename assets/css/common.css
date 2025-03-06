@@ -1,11 +1,9 @@
 /* google fonts */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-/* inter */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
-/* poppins */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 /* dm sans */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+/* DM Serif Text */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
 /* Hanken grotesk */
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -58,7 +56,7 @@ select:focus {
 
 :root {
     --Hanken-Grotesk: "Hanken Grotesk", sans-serif;
-    --white: #FFFFFF;
+    --white: #FFF;
     --primary: #FF510E;
     --black: #030303;
     --dark: #;
@@ -93,12 +91,18 @@ body.no-scroll {
     overflow: hidden;
 }
 
-.common-heading {
-    font-family: Poppins;
-    font-size: 35px;
+.common-heading{
+    color: var(--black);
+    text-align: center;
+    font-size: 56px;
     font-style: normal;
     font-weight: 700;
-    line-height: normal;
+    line-height: 34px;
+}
+.common-span-text{
+    color: var(--primary);
+    font-style: italic;
+    font-family: "DM Serif Text";
 }
 
 .common-sub-heading {
@@ -107,45 +111,79 @@ body.no-scroll {
     font-weight: 500;
     line-height: 26.24px;
     text-transform: uppercase;
+    color: var(--grey);
 }
 
 .common-heading-lg {
-    color: var(--dark);
-    font-size: 48px;
+    color: var(--grey);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 20px;
     font-style: normal;
-    font-weight: 700;
-    line-height: 53.36px;
-    letter-spacing: -0.48px;
+    font-weight: 600;
+    line-height: 33px;
 }
 
 .common-para {
-    color: var(--dark);
+    color: var(--grey);
+    font-family: "DM Sans";
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    line-height: 29.52px;
+    line-height: 32px;
+}
+
+.common-btn-2 {
+    padding: 2px 3px 2px 24.7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 30px;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.common-btn-2 span {
+    display: flex;
 }
 
 .common-padding {
     padding: 96px 0px;
 }
-
-.d-flex{
+.section-heading-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 62px;
+  }
+.d-flex {
     display: flex;
 }
-.flex-col{
+
+.flex-col {
     flex-direction: column;
 }
-.flex-row{
+
+.flex-row {
     flex-direction: row;
 }
-.items-center{
+
+.items-center {
     align-items: center;
 }
-.justify-center{
+
+.justify-center {
     justify-content: center;
 }
-.justify-between{
+
+.justify-between {
     justify-content: space-between;
 }
 
@@ -157,6 +195,7 @@ body.no-scroll {
     padding-left: 16px;
     padding-right: 16px;
 }
+
 .common-padding {
     padding: 46px 0px;
 }
@@ -166,6 +205,7 @@ body.no-scroll {
         padding-left: 20px;
         padding-right: 20px;
     }
+
     .common-padding {
         padding: 56px 0px;
     }
@@ -180,19 +220,8 @@ body.no-scroll {
 
 @media only screen and (min-width: 992px) {
     .section-padding-x {
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-
-    .common-padding {
-        padding: 76px 0px;
-    }
-}
-
-@media only screen and (min-width: 1300px) {
-    .section-padding-x {
-        padding-left: 150px;
-        padding-right: 150px;
+        padding-left: 40px;
+        padding-right: 40px;
     }
 
     .common-padding {
@@ -200,13 +229,24 @@ body.no-scroll {
     }
 }
 
-@media only screen and (min-width: 1700px) {
+@media only screen and (min-width: 1300px) {
     .section-padding-x {
-        padding-left: 300px;
-        padding-right: 300px;
+        padding-left: 90px;
+        padding-right: 90px;
     }
 
     .common-padding {
-        padding: 96px 0px;
+        padding: 90px 0px;
+    }
+}
+
+@media only screen and (min-width: 1700px) {
+    .section-padding-x {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+
+    .common-padding {
+        padding: 160px 0px;
     }
 }

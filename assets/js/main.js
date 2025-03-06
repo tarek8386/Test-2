@@ -83,72 +83,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
-  // for language change funtionality
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-      { pageLanguage: "en" },
-      "google_translate_element"
-    );
+// for marque behaibhiour
+
+// JavaScript to clone the items for infinite scroll effect
+document.addEventListener("DOMContentLoaded", function() {
+  const partnerItems = document.querySelector('.partner-items');
+  const items = document.querySelectorAll('.partner-item');
   
-    // Ensure default language is set on first visit
-    setTimeout(() => {
-      let googleTranslateFrame = document.querySelector(".goog-te-combo");
-      if (googleTranslateFrame) {
-        googleTranslateFrame.value = "en";
-        googleTranslateFrame.dispatchEvent(new Event("change"));
-      }
-    }, 500);
-  }
-  
-  function setInitialLanguage() {
-    changeLanguage("en", "us", "English");
-    changeMobileLanguage("en", "us", "English");
-  }
-  
-  function changeLanguage(langCode, countryCode, languageName) {
-    let googleTranslateFrame = document.querySelector(".goog-te-combo");
-  
-    if (googleTranslateFrame) {
-      googleTranslateFrame.value = langCode;
-      googleTranslateFrame.dispatchEvent(new Event("change"));
-    }
-  
-    document.getElementById(
-      "selected-flag"
-    ).src = `https://flagcdn.com/w40/${countryCode}.png`;
-    document.getElementById("selected-language-text").innerText =
-      languageName.substring(0, 2);
-    document.getElementById("languageList").classList.remove("show-lan");
-  }
-  
-  function toggleDropdown() {
-    document.getElementById("languageList").classList.toggle("show-lan");
-  }
-  
-  function changeMobileLanguage(langCode, countryCode, languageName) {
-    let googleTranslateFrame = document.querySelector(".goog-te-combo");
-  
-    if (googleTranslateFrame) {
-      googleTranslateFrame.value = langCode;
-      googleTranslateFrame.dispatchEvent(new Event("change"));
-    }
-  
-    document.getElementById(
-      "mobile-selected-flag"
-    ).src = `https://flagcdn.com/w40/${countryCode}.png`;
-    document.getElementById("mobile-selected-language-text").innerText =
-      languageName.substring(0, 2);
-    document.getElementById("mobileLanguageList").classList.remove("show-lan");
-  }
-  
-  function toggleMobileDropdown() {
-    document.getElementById("mobileLanguageList").classList.toggle("show-lan");
-  }
-  
-  window.onclick = function (event) {
-    if (!event.target.closest(".language-dropdown")) {
-      document.getElementById("languageList").classList.remove("show-lan");
-      document.getElementById("mobileLanguageList").classList.remove("show-lan");
-    }
-  };
+  // Clone the partner items to create an infinite loop
+  items.forEach(item => {
+    const clonedItem = item.cloneNode(true);
+    partnerItems.appendChild(clonedItem);
+  });
+});
+
   
