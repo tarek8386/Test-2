@@ -1,0 +1,135 @@
+@media only screen and (min-width: 1366px) and (max-width: 1600px) {
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1365px) {
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+}
+
+@media only screen and (min-width: 992px) {
+  .close-sidebar-btn {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .mobile-header {
+    display: flex !important;
+    padding: 10px 20px;
+  }
+
+  header {
+    position: absolute;
+    width: 320px;
+    height: 100vh;
+    z-index: 999;
+    top: 0;
+    left: -350px;
+    transition: left 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+
+  .header-main {
+    flex-direction: column;
+    height: 100vh;
+    justify-content: flex-start;
+    background-color: var(--grey);
+    z-index: 990;
+    border-radius: 0px;
+  }
+
+  .menu-area {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .language-selector-desktop {
+    display: none;
+  }
+
+  .about-us-single-item {
+    flex-direction: column !important;
+  }
+
+  .about-us-img-area img {
+    width: 100%;
+  }
+
+  .about-us-text-content-wrapper {
+    padding: 0px;
+  }
+}
+
+@media (min-width: 768px) {
+  
+}
+
+@media only screen and (max-width: 767px) {
+ 
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .common-heading {
+    font-size: 28px;
+  }
+
+  .common-sub-heading {
+    font-size: 17px;
+    line-height: 25.24px;
+  }
+
+  .common-heading-lg {
+    font-size: 32px;
+    line-height: 42.36px;
+  }
+
+  .common-para {
+    font-size: 17px;
+    line-height: 26.52px;
+  }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 767px) {
+  .common-heading {
+    font-size: 24px;
+  }
+
+  .common-sub-heading {
+    font-size: 17px;
+    line-height: 25.24px;
+  }
+
+  .common-heading-lg {
+    font-size: 27px;
+    line-height: 38.36px;
+  }
+
+  .common-para {
+    font-size: 16px;
+    line-height: 26.52px;
+  }
+
+}
+@media only screen and (max-width: 500px) {
+  .common-heading {
+    font-size: 18px;
+    padding: 0px 10px;
+  }
+
+  .common-sub-heading {
+    font-size: 17px;
+    line-height: 25.24px;
+  }
+
+  .common-heading-lg {
+    font-size: 24px;
+    line-height: 32.36px;
+  }
+
+  .common-para {
+    font-size: 15px;
+    line-height: 24.52px;
+  }
+  
+}
