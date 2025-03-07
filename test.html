@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Accordion</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+/* FAQ Section Layout */
+.faq-section {
+    display: flex;
+    max-width: 900px;
+    gap: 50px;
+    padding: 40px;
+    align-items: flex-start;
+}
+
+/* Left Side */
+.faq-left {
+    flex: 1;
+}
+
+.faq-left h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+}
+
+.faq-left h2 span {
+    color: #ff6600; /* Orange color */
+    font-style: italic;
+}
+
+.faq-left p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Right Side (Accordion) */
+.faq-right {
+    flex: 1.5;
+}
+
+.faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-question p {
+    font-weight: bold;
+    color: #222;
+    margin: 0;
+}
+
+.plus-icon {
+    font-size: 20px;
+    color: #ff6600;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Answer (Hidden by default) */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    padding: 0 10px;
+}
+
+.faq-answer p {
+    color: #444;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+/* Active State */
+.faq-item.active .faq-answer {
+    max-height: 100px; /* Adjust based on content */
+    padding: 10px;
+}
+
+.faq-item.active .plus-icon {
+    transform: rotate(45deg);
+}
+
+    </style>
+</head>
+<body>
+
+    <section class="faq-section">
+        <div class="faq-left">
+            <h2>Answers to all your <span>Questions</span></h2>
+            <p>If you can’t find what you’re looking for, feel free to <br>
+               Contact us directly, we're always happy to assist you!</p>
+        </div>
+
+        <div class="faq-right">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <p>What types of courses are available on your platform?</p>
+                    <span class="plus-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We offer a variety of courses in different fields, including technology, business, and creative skills.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <p>How do I purchase a course?</p>
+                    <span class="plus-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>You can purchase a course by selecting your desired course and following the checkout process.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <p>Can I access the courses on multiple devices?</p>
+                    <span class="plus-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, our courses can be accessed from any device with an internet connection.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <p>Do I get a certificate after completing a course?</p>
+                    <span class="plus-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, after successfully completing a course, you will receive a certificate.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <p>What is your refund policy?</p>
+                    <span class="plus-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We offer a 30-day refund policy if you are not satisfied with the course.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+        item.querySelector(".faq-question").addEventListener("click", () => {
+            // Close all other items
+            faqItems.forEach(el => {
+                if (el !== item) {
+                    el.classList.remove("active");
+                }
+            });
+
+            // Toggle the current item
+            item.classList.toggle("active");
+        });
+    });
+});
+
+    </script>
+</body>
+</html>

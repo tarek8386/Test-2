@@ -5,6 +5,9 @@
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .tm-br-class{
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -58,6 +61,9 @@
 
   .about-us-text-content-wrapper {
     padding: 0px;
+  }
+  .tm-br-class{
+    display: none;
   }
 }
 

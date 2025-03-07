@@ -97,7 +97,7 @@ body.no-scroll {
     font-size: 56px;
     font-style: normal;
     font-weight: 700;
-    line-height: 34px;
+    line-height: 60px;
 }
 .common-span-text{
     color: var(--primary);
@@ -146,6 +146,7 @@ body.no-scroll {
     font-style: normal;
     font-weight: 800;
     line-height: normal;
+    width: fit-content;
 }
 
 .common-btn-2 span {

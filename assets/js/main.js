@@ -167,4 +167,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+// for accordion
+
+document.addEventListener("DOMContentLoaded", () => {
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach(item => {
+      item.querySelector(".faq-question").addEventListener("click", () => {
+          // Close all other items
+          faqItems.forEach(el => {
+              if (el !== item) {
+                  el.classList.remove("active");
+              }
+          });
+
+          // Toggle the current item
+          item.classList.toggle("active");
+      });
+  });
+});
+
+
+
+
+
   
