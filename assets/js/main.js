@@ -97,4 +97,74 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+
+// slider js
+document.addEventListener("DOMContentLoaded", function () {
+  const sliderContent = document.querySelector(".slider-content-area");
+  let slides = document.querySelectorAll(".slider-item");
+  const pagination = document.querySelector(".pagination");
+
+  let visibleSlides = getVisibleSlides();
+  let totalSlides = slides.length;
+  let index = 0;
+
+  // Clone items dynamically for an infinite effect
+  slides.forEach((slide) => {
+      let clone = slide.cloneNode(true);
+      sliderContent.appendChild(clone);
+  });
+
+  // Create Pagination
+  for (let i = 0; i < totalSlides; i++) {
+      let dot = document.createElement("span");
+      if (i === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => goToSlide(i));
+      pagination.appendChild(dot);
+  }
+
+  function getVisibleSlides() {
+      if (window.innerWidth > 1024) return 3; // Large screens
+      if (window.innerWidth > 768) return 2; // Tablets
+      return 1; // Mobile
+  }
+
+  function updatePagination() {
+      let dots = document.querySelectorAll(".pagination span");
+      dots.forEach((dot, i) => {
+          dot.classList.toggle("active", i === index % totalSlides);
+      });
+  }
+
+  function nextSlide() {
+      index++;
+      if (index >= totalSlides) {
+          index = 0; // Reset index
+      }
+      sliderContent.style.transition = "transform 0.5s ease-in-out";
+      sliderContent.style.transform = `translateX(-${index * (100 / visibleSlides)}%)`;
+      updatePagination();
+  }
+
+  function goToSlide(i) {
+      index = i;
+      sliderContent.style.transition = "transform 0.5s ease-in-out";
+      sliderContent.style.transform = `translateX(-${index * (100 / visibleSlides)}%)`;
+      updatePagination();
+  }
+
+  // Auto-slide every 3 seconds
+  setInterval(nextSlide, 3000);
+
+  // Adjust on resize
+  window.addEventListener("resize", () => {
+      visibleSlides = getVisibleSlides();
+      index = 0;
+      sliderContent.style.transform = "translateX(0)";
+  });
+});
+
+
+
+
+
   
