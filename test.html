@@ -3,94 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infinite Loop Slider</title>
+    <title>Custom CSS Animation</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
+    <style>
+        /* Base Styles */
 body {
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #000;
-    overflow: hidden;
+    background-color: #f4f4f4;
+    text-align: center;
 }
 
-.slider {
-    width: 90%;
-    max-width: 1200px;
-    overflow: hidden;
-    position: relative;
+.section-heading-wrapper {
+    opacity: 0; /* Hide initially */
+    animation: fadeIn 1.5s ease-in-out forwards;
 }
 
-.slider-track {
-    display: flex;
-    width: calc(250px * 8); /* Adjust based on number of slides */
-    animation: scroll 10s linear infinite;
+/* Heading Styling */
+.common-heading {
+    font-size: 28px;
+    font-weight: bold;
+    color: #222;
 }
 
-.slide {
-    width: 250px;
-    flex-shrink: 0;
-    margin: 10px;
-    border-radius: 15px;
-    overflow: hidden;
+.common-span-text {
+    color: #e74c3c;
 }
 
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 15px;
+.common-sub-heading {
+    font-size: 18px;
+    color: #666;
+    margin-top: 10px;
 }
 
-/* Different heights */
-.tall {
-    height: 300px;
-}
-
-.short {
-    height: 200px;
-}
-
-@keyframes scroll {
+/* Animation Effects */
+@keyframes fadeIn {
     from {
-        transform: translateX(0);
+        opacity: 0;
+        transform: translateY(20px);
     }
     to {
-        transform: translateX(-50%);
+        opacity: 1;
+        transform: translateY(0);
     }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply animations */
+.fade-in-up {
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.slide-in-left {
+    animation: slideInLeft 1.5s ease-in-out forwards;
 }
 
     </style>
 </head>
 <body>
 
-    <div class="slider">
-        <div class="slider-track">
-            <div class="slide tall"><img src="./assets/images/hpme-slide-1.png" alt="Person 1"></div>
-            <div class="slide short"><img src="./assets/images/hpme-slide-2.png" alt="Person 2"></div>
-            <div class="slide tall"><img src="./assets/images/hpme-slide-3.png" alt="Person 3"></div>
-            <div class="slide short"><img src="./assets/images/hpme-slide-4.png" alt="Person 4"></div>
-            
-            <!-- Duplicate slides for infinite effect -->
-            <div class="slide tall"><img src="./assets/images/hpme-slide-1.png" alt="Person 1"></div>
-            <div class="slide short"><img src="./assets/images/hpme-slide-2.png" alt="Person 2"></div>
-            <div class="slide tall"><img src="./assets/images/hpme-slide-3.png" alt="Person 3"></div>
-            <div class="slide short"><img src="./assets/images/hpme-slide-4.png" alt="Person 4"></div>
-        </div>
+    <div class="section-heading-wrapper">
+        <h3 class="common-heading fade-in-up">Why Choose 
+            <span class="common-span-text">SerSkillInter</span>
+        </h3>
+        <h4 class="common-sub-heading slide-in-left">
+            Gain clarity & achieve your financial goals with expert guidance.
+        </h4>
     </div>
 
-    <script src="script.js"></script>
-
-    <script>
-    
-
-    </script>
 </body>
 </html>

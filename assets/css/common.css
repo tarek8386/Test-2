@@ -84,7 +84,7 @@ body::-webkit-scrollbar {
 /* common style starts */
 
 .show {
-    left: 0px;
+    top: 0px;
 }
 
 body.no-scroll {
