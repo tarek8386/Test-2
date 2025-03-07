@@ -165,6 +165,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+// for pricing card
+
+const priceTabs = document.querySelectorAll('.price-tab-btn');
+const priceAmounts = document.querySelectorAll('.price-amount'); // Assuming these are the elements to be updated
+
+priceTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+        priceTabs.forEach((item) => {
+            item.classList.remove('active');
+        });
+        tab.classList.add('active');
+
+        if (tab.classList.contains('monthly')) {
+            priceAmounts.forEach((priceAmount) => {
+                let currentPrice = parseFloat(priceAmount.textContent); 
+                let monthlyPrice = currentPrice / 12; 
+                priceAmount.textContent = monthlyPrice.toFixed(2); 
+            });
+        } else {
+            
+            priceAmounts.forEach((priceAmount) => {
+                let currentPrice = parseFloat(priceAmount.dataset.yearlyPrice); 
+                priceAmount.textContent = currentPrice.toFixed(2); 
+            });
+        }
+    });
+});
+
+
+
 
 
 
@@ -186,6 +216,55 @@ document.addEventListener("DOMContentLoaded", () => {
           item.classList.toggle("active");
       });
   });
+});
+
+
+
+// counter
+
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".counter");
+  const statsSection = document.querySelector(".stats-section");
+
+  function runCounter(counter) {
+      let target = +counter.getAttribute("data-target");
+      let count = 0;
+      let increment = Math.ceil(target / 100); // Increment speed
+
+      let updateCounter = setInterval(() => {
+          count += increment;
+          if (count >= target) {
+              counter.innerText = target.toLocaleString(); // Format with commas
+              clearInterval(updateCounter);
+          } else {
+              counter.innerText = count.toLocaleString();
+          }
+      }, 20);
+  }
+
+  function checkScroll() {
+      let sectionPos = statsSection.getBoundingClientRect().top;
+      let screenPos = window.innerHeight / 1.5;
+
+      if (sectionPos < screenPos) {
+          counters.forEach(counter => runCounter(counter));
+          window.removeEventListener("scroll", checkScroll);
+      }
+  }
+
+  window.addEventListener("scroll", checkScroll);
+  checkScroll(); // Run on page load if already in view
+});
+
+
+// home hero slider 
+const sliderTrack = document.querySelector('.slider-track');
+
+// Duplicate slides for seamless looping
+const slides = document.querySelectorAll('.slide');
+slides.forEach(slide => {
+    let clone = slide.cloneNode(true);
+    sliderTrack.appendChild(clone);
 });
 
 
