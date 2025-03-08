@@ -428,6 +428,7 @@ padding: 30px;
 border-radius: 24px;
 border: 1px solid rgba(0, 0, 0, 0.11);
 background: #FFF4F0;
+flex-grow: 1;
 }
 .why-choose-card-2 .why-choose-card-content-area{
   border-radius: 24px;

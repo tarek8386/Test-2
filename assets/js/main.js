@@ -187,38 +187,48 @@ document.addEventListener("DOMContentLoaded", () => {
 // counter
 
 document.addEventListener("DOMContentLoaded", () => {
-  const counters = document.querySelectorAll(".counter");
-  const statsSection = document.querySelector(".stats-section");
-
-  function runCounter(counter) {
+    const counters = document.querySelectorAll(".counter");
+    const statsSection = document.querySelector(".stats-section");
+  
+    function runCounter(counter, isPercentage = false) {
       let target = +counter.getAttribute("data-target");
       let count = 0;
       let increment = Math.ceil(target / 100); // Increment speed
-
+  
       let updateCounter = setInterval(() => {
-          count += increment;
-          if (count >= target) {
-              counter.innerText = target.toLocaleString(); // Format with commas
-              clearInterval(updateCounter);
-          } else {
-              counter.innerText = count.toLocaleString();
-          }
+        count += increment;
+        if (count >= target) {
+          counter.innerText = isPercentage
+            ? `${target}%`
+            : `${target.toLocaleString()}K+`; // Add "K+" or "%"
+          clearInterval(updateCounter);
+        } else {
+          counter.innerText = isPercentage
+            ? `${count}%`
+            : `${count.toLocaleString()}K+`;
+        }
       }, 20);
-  }
-
-  function checkScroll() {
+    }
+  
+    function checkScroll() {
       let sectionPos = statsSection.getBoundingClientRect().top;
       let screenPos = window.innerHeight / 1.5;
-
+  
       if (sectionPos < screenPos) {
-          counters.forEach(counter => runCounter(counter));
-          window.removeEventListener("scroll", checkScroll);
+        counters.forEach((counter, index) => {
+          if (index === counters.length - 1) {
+            runCounter(counter, true); // Last stat with %
+          } else {
+            runCounter(counter); // First two with K+
+          }
+        });
+        window.removeEventListener("scroll", checkScroll);
       }
-  }
-
-  window.addEventListener("scroll", checkScroll);
-  checkScroll(); // Run on page load if already in view
-});
+    }
+  
+    window.addEventListener("scroll", checkScroll);
+    checkScroll(); // Run on page load if already in view
+  });
 
 
 // home hero slider 
