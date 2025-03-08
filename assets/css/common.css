@@ -80,6 +80,10 @@ body {
 body::-webkit-scrollbar {
     display: none;
 }
+main{
+    width: 100%;
+    overflow: hidden;
+}
 
 /* common style starts */
 
@@ -134,12 +138,12 @@ body.no-scroll {
 }
 
 .common-btn-2 {
-    padding: 2px 3px 2px 24.7px;
+    padding: 2px 3px 2px 24.7px !important;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    border-radius: 30px;
+    border-radius: 30px !important;
     background: var(--primary);
     color: var(--white);
     font-size: 18px;

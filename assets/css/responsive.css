@@ -112,6 +112,30 @@
 .why-choose-card-2 .why-choose-card-content-area {
   padding: 24px;
 }
+.price-cards-grid {
+  gap: 35px;
+}
+.price_text>span {
+  font-size: 28px;
+  font-weight: 800;
+}
+.price_text {
+  line-height: 30px;
+}
+.price_subtitle {
+  font-size: 17px;
+  line-height: 26px;
+}
+.get-started-content-wrapper h3 {
+  font-size: 40px;
+  line-height: 50px;
+  max-width: 240px;
+}
+.get-started-content-wrapper p {
+  font-size: 20px;
+  line-height: 30.3px;
+  max-width: 580px;
+}
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -145,6 +169,33 @@
 }
 .why-choose-card-2 .why-choose-card-content-area {
   padding: 24px;
+}
+.price-cards-grid {
+  gap: 25px;
+}
+.price_text>span {
+  font-size: 28px;
+  font-weight: 800;
+}
+.price_text {
+  line-height: 30px;
+}
+.price_subtitle {
+  font-size: 16px;
+  line-height: 26px;
+}
+.get-started-content-wrapper h3 {
+  font-size: 28px;
+  line-height: 41px;
+  max-width: 240px;
+}
+.get-started-content-wrapper p {
+  font-size: 18px;
+  line-height: 28.3px;
+  max-width: 479px;
+}
+.get-started-content-wrapper {
+  gap: 25px !important;
 }
 }
 
@@ -264,6 +315,7 @@
 }
 
 .stats-container {
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
@@ -298,6 +350,21 @@
 .common-heading {
   font-size: 38px !important;
   line-height: 48px !important;
+}
+.content-box h2 {
+  font-size: 35px;
+  line-height: 34px;
+}
+.content-box p {
+  font-size: 17px;
+  margin: 15px 0 22px;
+}
+.stats-content-wrapper-img-area {
+  max-height: 508px;
+}
+.home-hero-section {
+
+  height: 75vh;
 }
 }
 
@@ -368,6 +435,10 @@
 .section-heading-wrapper-2-right {
   gap: 16px;
 }
+.team-para {
+  font-size: 35px;
+  line-height: 56px;
+}
 }
 
 @media only screen and (min-width: 501px) and (max-width: 767px) {
@@ -435,6 +506,10 @@
 .pricing-card-content-wrapper {
   gap: 50px;
 }
+.team-para {
+  font-size: 24px;
+  line-height: 45px;
+}
 
 /* footer */
 .footer-container-bottom {
@@ -498,7 +573,7 @@
   margin-top: -121px !important;
 }
 .layer-img {
-  height: 110px;
+  height: 90px;
 }
 .pagination span { 
   width: 12px;  
@@ -535,7 +610,40 @@
   font-weight: 700;
   line-height: 34px;
 }
-
+.unlock-potential-area {
+  padding: 75px 0px;
+}
+.price-cards {
+  gap: 12px;
+  padding: 15px;
+}
+.price_subtitle {
+  font-size: 18px;
+  line-height: 24px;
+}
+.price_title {
+  line-height: 45px;
+  font-size: 30px;
+}
+.price_text>span {
+  font-size: 28px;
+}
+.price_get_start {
+ padding: 12px 0px;
+  font-size: 16px;
+}
+.price_text {
+  line-height: 40px;
+  font-size: 15px;
+}
+.plans_features_list {
+  gap: 5px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.price-cards {
+  width: auto;
+}
 
 /* about us page responsive */
 .content-box h2 {
@@ -543,6 +651,7 @@
   line-height: 40px;
 }
 .stats-container {
+  display: grid;
   grid-template-columns: repeat(1, 1fr);
 }
 
@@ -557,15 +666,15 @@
 }
 
 .faq-item {
-  padding: 25px 0;
+  padding: 20px 0;
 }
 
 .faq-question p {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .get-started-content-wrapper h3 {
-  font-size: 32px;
+  font-size: 30px;
   line-height: 44px;
 }
 
@@ -576,6 +685,25 @@
 .common-heading {
   font-size: 32px !important;
   line-height: 44px !important;
+}
+.team-para {
+  font-size: 20px;
+  line-height: 42px;
+}
+.stat-box h2 {
+  font-size: 28px;
+}
+.stats-content-wrapper-img-area {
+  max-height: 358px;
+}
+.get-started-content-wrapper {
+  padding: 50px 0px;
+}
+.faq-answer p {
+
+  font-size: 14px;
+  line-height: 25px;
+  margin: 6px 0;
 }
 /* about us page responsive */
 
