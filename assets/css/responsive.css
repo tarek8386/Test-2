@@ -292,6 +292,12 @@ padding-right: 0;
   font-size: 44px !important;
   line-height: 52px !important;
 }
+.footer-container-top {
+  justify-content: space-between;
+  gap: 40px;
+  align-items: start;
+  flex-direction: column;
+}
 }
 
 @media (max-width: 768px) {

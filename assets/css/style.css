@@ -269,6 +269,7 @@ line-height: 19.941px;
 .close-sidebar-btn {
   position: absolute;
   right: 23px;
+  top: 75px;
   cursor: pointer;
 }
 
