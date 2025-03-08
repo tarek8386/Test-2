@@ -1234,9 +1234,8 @@ text-transform: capitalize;
   stroke: #fa500d; 
   
 }
-.social-icons a:hover svg path:last-child {
-  stroke: #fff; 
-  fill: #f18256; 
+.social-icons a:hover svg path{
+  fill: #04beec; 
   
 }
 
