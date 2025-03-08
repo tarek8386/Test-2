@@ -303,6 +303,9 @@ line-height: 100.941px;
   font-style: italic;
   font-weight: 400;
 }
+.home-hero-section a{
+  margin-top: 10px;
+}
 /* home hero end */
 
 /* home hero slider start */
@@ -311,7 +314,7 @@ line-height: 100.941px;
   width: 100%;
   max-width: 1200px;
   position: relative;
-  margin-top: -150px !important;
+  margin-top: -238px !important;
 }
 
 
@@ -321,7 +324,7 @@ line-height: 100.941px;
   width: calc(250px * 12);
   align-items: center;
   animation: scroll 10s linear infinite;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .slide {
@@ -738,6 +741,9 @@ position: relative;
   justify-content: center;
   flex-direction: column;
   z-index: 10;
+  max-width: 580px;
+  margin: 0 auto;
+  text-align: center;
 }
 .layer-img{
   position: absolute;
