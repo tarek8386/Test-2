@@ -230,14 +230,14 @@
     top: -110vh; 
     transition: top 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
- background-color: #674b3e;
+ background-color: #97654d;
   }
 
   .header-main {
     flex-direction: column;
     height: 100vh;
     justify-content: flex-start;
-    background: #674b3e !important;
+    background: #97654d !important;
     z-index: 990;
     border-radius: 0px;
   }
