@@ -1219,11 +1219,11 @@ text-transform: capitalize;
 }
 
 .social-icons a:hover svg path:first-child {
-  stroke: #fa500d; 
+  stroke: #FFF; 
   
 }
 .social-icons a:hover svg path{
-  fill: #04beec; 
+  fill: #fa500d; 
   
 }
 
